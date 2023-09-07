@@ -34,4 +34,20 @@ document.addEventListener('click', () => {
 });
 //4
 
+const applyCallbackToElements = (arr, callback) => {
+    const resultArray = [];
+  
+    for (let i = 0; i < arr.length; i++) {
+      const result = callback(arr[i]);
+      resultArray.push(result);
+    }
+    return resultArray;
+};
+
+const arr = [1, 2, 3, 4, 5];
+const squareCallback = (x) => x * x; 
+
+const results = applyCallbackToElements(arr,squareCallback);
+console.log(results); //[1, 4, 9, 16, 25]
+  
 //5
