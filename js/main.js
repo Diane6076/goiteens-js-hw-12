@@ -51,3 +51,14 @@ const results = applyCallbackToElements(arr,squareCallback);
 console.log(results); //[1, 4, 9, 16, 25]
   
 //5
+
+const discountPrice = (originalPrice, discountPerces, callback) => {
+
+if (discountPerces < 0 || discountPerces > 100) {
+    callback(new Error("Неправильний відсоток знижки"), null);
+  } else {
+    const discountAmount = (originalPrice * discountPerces) / 100;
+    const discountedPrice = originalPrice - discountAmount;
+    callback(null, discountedPrice);
+  }
+};
